@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv"></div>
+<input type="button" id="btn" value="发送JSONP"/>
+</body>
+</html>
+<script>
+    sayHello = (data) => {
+        document.getElementById("mydiv").innerText = data.name
+    }
+    window.onload = () =>{
+        document.getElementById("btn").onclick = () =>{
+            const htmlScriptElement = document.createElement("script")
+            htmlScriptElement.type = "text/javascript"
+            htmlScriptElement.src = "http://localhost:8080/ajax01_war_exploded/jsonp?fun=sayHello"
+            document.getElementsByTagName("body")[0].appendChild(htmlScriptElement)
+        }
+    }
+</script>

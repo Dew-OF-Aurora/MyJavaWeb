@@ -1,0 +1,219 @@
+{
+    "root": {
+        "data": {
+            "id": "coolfa5k9gg0",
+            "created": 1669706128503,
+            "text": "Java技能树",
+            "expandState": "expand"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "coolft2htnk0",
+                    "created": 1669706169676,
+                    "text": "JAVA SE",
+                    "expandState": "expand",
+                    "layout": null
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "coolpj1aeo00",
+                            "created": 1669706931477,
+                            "text": "Socket",
+                            "layout": null,
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "coolpo9tqjs0",
+                            "created": 1669706942877,
+                            "text": "I/O",
+                            "layout": null,
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "coolgn46bnk0",
+                    "created": 1669706235081,
+                    "text": "Java Web",
+                    "expandState": "expand",
+                    "layout": null
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "coolj2zrla80",
+                            "created": 1669706426372,
+                            "text": "前端",
+                            "expandState": "expand",
+                            "layout": null
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cooljvac1940",
+                                    "created": 1669706487961,
+                                    "text": "页面",
+                                    "expandState": "expand",
+                                    "layout": null
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "coolkprvwfc0",
+                                            "created": 1669706554325,
+                                            "text": "JSP",
+                                            "layout": null,
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "coollab61mo0",
+                                            "created": 1669706599027,
+                                            "text": "Html",
+                                            "layout": null,
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "coolln312sg0",
+                                    "created": 1669706626833,
+                                    "text": "页面展示脚本",
+                                    "layout": null,
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cooljw1di3k0",
+                                            "created": 1669706489596,
+                                            "text": "JavaScript",
+                                            "expandState": "expand",
+                                            "layout": null
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "coolk5xieqw0",
+                                                    "created": 1669706511130,
+                                                    "text": "AJAX",
+                                                    "layout": null,
+                                                    "expandState": "expand"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cooqf7n15jk0",
+                                    "created": 1669720228578,
+                                    "text": "前后端数据传递"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cooqffdunyo0",
+                                            "created": 1669720245438,
+                                            "text": "JSON"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cooqfgbkbtc0",
+                                            "created": 1669720247476,
+                                            "text": "XML"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "coolj3vhxzc0",
+                            "created": 1669706428290,
+                            "text": "后端",
+                            "progress": null,
+                            "layout": null,
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "coolmoi295k0",
+                                    "created": 1669706708283,
+                                    "text": "Servlet",
+                                    "layout": null,
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cooln47xnz40",
+                                    "created": 1669706742499,
+                                    "text": "SpringMVC",
+                                    "layout": null,
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "coolj4fmwtk0",
+                            "created": 1669706429508,
+                            "text": "数据库",
+                            "layout": null,
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "coolnm4ky1c0",
+                                    "created": 1669706781478,
+                                    "text": "Mysql",
+                                    "layout": null,
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "coolnn5ujhk0",
+                                    "created": 1669706783732,
+                                    "text": "SqlServer",
+                                    "layout": null,
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "classic-compact",
+    "version": "1.4.43"
+}

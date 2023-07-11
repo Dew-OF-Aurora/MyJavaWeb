@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--为了支持ajax请求-->
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.aurora.controller" />
+    <!--添加视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--配置前缀, 用于指定需要被解析的网页路径-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--配置后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+<!--    配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+<!--            拦截请求路径-->
+            <mvc:mapping path="/**"/>
+<!--            放行请求路径-->
+            <mvc:exclude-mapping path="/showlogin"/>
+            <mvc:exclude-mapping path="/login"/>
+            <bean class="com.aurora.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+<!--        存在多个拦截器可以形成拦截器链-->
+    </mvc:interceptors>
+</beans>

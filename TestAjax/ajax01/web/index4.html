@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script>
+        sayHello = (data) =>{
+            $("#mydiv").html(data.name)
+        }
+        //定义onload函数
+        $(function (){
+            //如果使用success则自动生成了一个函数(函数名是Jquery1234567897898797类似的), 加到URL后面传递给远端,然后调用success的回调函数
+            //jQuery36107927554007824482_1669958335914({"name":"Aurora","passwd":"123"})
+            //可以指定函数名jsonp,指定回调函数内容jsoncallback
+            $("#btn").click(function () {
+                //发送JsonP请求,并不是靠Ajax发送
+                $.ajax({
+                    type:"GET",
+                    url:"http://localhost:8080/ajax01_war_exploded/jsonp",
+                    dataType:"jsonp",
+                    /*success : function (data){
+                        $("#mydiv").html(data.name)
+                    }*/
+                    jsonp:"fun",
+                    jsonpCallback:"sayHello"
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="mydiv"></div>
+<input type="button" id="btn" value="发送JSONP"/>
+</body>
+</html>
+

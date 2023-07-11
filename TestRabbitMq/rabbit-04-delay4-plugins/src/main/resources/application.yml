@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  rabbitmq:
+    host: 192.168.50.225
+    port: 30068
+    username: admin
+    password: admin
+    virtual-host: aurora
+
+my:
+  exchangeName: exchange.delay.4  # 交换机 （延迟交换机）
+  queueDelayName: queue.delay.4 # 延迟队列

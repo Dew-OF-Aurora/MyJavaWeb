@@ -1,0 +1,14 @@
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+    contentnegotiation:
+      favor-parameter: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+
+
+

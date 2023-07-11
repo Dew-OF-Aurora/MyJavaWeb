@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  rabbitmq:
+    host: 192.168.50.225
+    port: 30068
+    username: admin
+    password: admin
+    virtual-host: aurora
+    publisher-confirm-type: correlated # 开启生产者确认模式，设置为关联模式
+    publisher-returns: true
+my:
+  ExChangNormal: exchange.confirm.1
+  queueNormal: queue.confirm.1

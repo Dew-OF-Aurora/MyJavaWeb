@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="开始"/><br>
+    <input type="button" id="btn2" value="暂停"/><br>
+    <div id="time"></div>
+</body>
+</html>
+<script>
+    var date = new Date();
+    date = date.toLocaleDateString()
+    document.write(date)
+    document.write("<br>")
+    //获取1970.0.0.0到现在的总毫秒数
+    document.getElementById("btn1").onclick = function() {
+        v = window.setInterval("displaytime()",1)
+    }
+    document.getElementById("btn2").onclick = function() {
+        window.clearInterval(v)
+    }
+    function displaytime() {
+        document.getElementById("time").innerText = new Date().getTime()
+    }
+
+</script>

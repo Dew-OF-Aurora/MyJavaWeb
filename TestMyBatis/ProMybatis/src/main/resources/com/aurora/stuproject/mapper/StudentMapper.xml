@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.stuproject.mapper.StudentMapper">
+    <insert id="InsertToStudent">
+        INSERT into t_student (sid,sname,cid) values(#{sid},#{sname},#{cid})
+    </insert>
+    <select id="selectBySidStep2" resultType="Student">
+        SELECT * from t_student where cid = #{cid}
+    </select>
+
+
+    <resultMap id="studentResultMapByStep" type="Student">
+        <id property="sid" column="sid"/>
+        <result property="sname" column="sname"/>
+        <association property="myclass"
+                     select="com.aurora.stuproject.mapper.ClassMapper.selectByIdStep2"
+                     column="cid"/>
+    </resultMap>
+
+    <select id="selectByIdStep1" resultMap="studentResultMapByStep">
+        select sid,sname,cid from t_student where sid = #{sid}
+    </select>
+
+
+    <!--一条SQL语句，association。-->
+    <resultMap id="studentResultMapAssociation" type="Student">
+        <id property="sid" column="sid"/>
+        <result property="sname" column="sname"/>
+        <!--
+            association：翻译为关联。一个Student对象关联一个Clazz对象
+                property：提供要映射的POJO类的属性名。
+                javaType：用来指定要映射的java类型。
+        -->
+        <association property="myclass" javaType="Class">
+            <id property="cid" column="cid"/>
+            <result property="cname" column="cname"/>
+        </association>
+    </resultMap>
+
+    <select id="selectByIdAssociation" resultMap="studentResultMapAssociation">
+        select
+            s.sid,s.sname,c.cid,c.cname
+        from
+            t_student s left join t_class c on s.cid = c.cid
+        where
+            s.sid = #{sid}
+    </select>
+
+
+
+    <!--多对一映射的第一种方式：一条SQL语句，级联属性映射。-->
+    <resultMap id="studentResultMap" type="Student">
+        <id property="sid" column="sid"/>
+        <result property="sname" column="sname"/>
+        <result property="myclass.cid" column="cid"/>
+        <result property="myclass.cname" column="cname"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="studentResultMap">
+        select
+            s.sid,s.sname,c.cid,c.cname
+        from
+            t_student s left join t_class c on s.cid = c.cid
+        where
+            s.sid = #{sid}
+    </select>
+</mapper>

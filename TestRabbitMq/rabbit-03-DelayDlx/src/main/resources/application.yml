@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  rabbitmq:
+    host: 192.168.50.225
+    port: 30068
+    username: admin
+    password: admin
+    virtual-host: aurora
+    listener.simple.acknowledge-mode: manual ## 开启消费者手动确认
+my:
+  ExChange: exchange.delay.1
+  queueNormal: queue.delay.Normal
+  queueDlx: queue.delay.Dlx

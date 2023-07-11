@@ -1,0 +1,5 @@
+server:
+  servlet:
+    encoding:
+      charset: GBK
+debug: false

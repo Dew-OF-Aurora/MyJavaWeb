@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.stuproject.mapper.ClassMapper">
+
+
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <!--分布查询-->
+    <resultMap id="ResultMapByStep" type="Class">
+        <id property="cid" column="cid" />
+        <result property="cname" column="cname" />
+        <association property="stus"
+                     select="com.aurora.stuproject.mapper.StudentMapper.selectBySidStep2"
+                     column="cid"/>
+    </resultMap>
+    <select id="selectByCidStep1" resultMap="ResultMapByStep">
+        Select cid,cname from t_class where cid = #{cid}
+    </select>
+
+
+
+    <resultMap id="clazzResultMap" type="Class">
+        <id property="cid" column="cid"/>
+        <result property="cname" column="cname"/>
+        <!--一对多，这里是collection。collection是集合的意思。-->
+        <!--ofType 属性用来指定集合当中的元素类型。-->
+        <collection property="stus" ofType="Student">
+            <id property="sid" column="sid"/>
+            <result property="sname" column="sname"/>
+        </collection>
+    </resultMap>
+    <select id="selectByCollection" resultMap="clazzResultMap">
+        select c.cid,c.cname,s.sid,s.sname from t_class c left join t_student s on c.cid = s.cid where c.cid = #{cid}
+    </select>
+
+
+
+    <select id="selectByIdStep2" resultType="Class">
+        SELECT cid,cname from t_class where cid = #{cid}
+    </select>
+</mapper>

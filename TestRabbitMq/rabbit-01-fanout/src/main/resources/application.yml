@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: fanout-lean
+
+  rabbitmq:
+    host: 192.168.50.225
+    port: 30068
+    username: admin
+    password: admin
+    virtual-host: aurora

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.bank.mapper.AccountMapper">
+
+    <select id="selectOneByName" resultType="com.aurora.bank.pojo.Account">
+        SELECT * FROM account where name = #{name}
+    </select>
+
+    <update id="updateBalanceByUser">
+        UPDATE account set account.balance = #{balance} WHERE account.name = #{name}
+    </update>
+
+</mapper>

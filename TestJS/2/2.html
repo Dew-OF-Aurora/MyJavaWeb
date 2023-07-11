@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="firstChk" />全选<br>
+    <input type="checkbox" name="aihao" value="smoke" />抽烟<br>
+    <input type="checkbox" name="aihao" value="drink">喝酒<br>
+</body>
+</html>
+<script>
+    var aihao = document.getElementsByName("aihao")
+    var firstChk = document.getElementById("firstChk")
+    firstChk.onclick = function() {
+        if(firstChk.checked === true){
+            for (var i = 0; i < aihao.length; i++){
+                aihao[i].checked = true;
+            }
+        }
+        else{
+            for (var i = 0; i < aihao.length; i++){
+                aihao[i].checked = false;
+            }
+        }
+    }
+
+    
+
+
+</script>
