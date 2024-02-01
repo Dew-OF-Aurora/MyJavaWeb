@@ -10,8 +10,7 @@ public class Client {
 
         BufferedReader in = null;
         BufferedWriter out = null;
-        try (Socket client = new Socket();
-        ) {
+        try (Socket client = new Socket();) {
             SocketAddress address = new InetSocketAddress("localhost", 9996);
             client.connect(address);
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));

@@ -16,8 +16,7 @@ public class ServerTest {
         BufferedReader in = null;
         BufferedWriter out = null;
         while (true){
-            try (ServerSocket server = new ServerSocket();
-            ) {
+            try (ServerSocket server = new ServerSocket()) {
                 server.bind(new InetSocketAddress("localhost", 9996));
                 Socket accept = server.accept();
                 //拿到客户端的接收socket端口
