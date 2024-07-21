@@ -3,3 +3,7 @@ server:
     encoding:
       charset: GBK
 debug: false
+
+com.aurora:
+  prefix: aurora
+  suffix: Hello

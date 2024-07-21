@@ -8,11 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 
-/**
- * @author:Aurora
- * @create: 2023-06-20 17:50
- * @Description:
- */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
     @Override

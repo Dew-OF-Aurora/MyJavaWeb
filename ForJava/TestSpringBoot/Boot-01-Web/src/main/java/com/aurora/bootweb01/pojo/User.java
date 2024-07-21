@@ -3,11 +3,6 @@ package com.aurora.bootweb01.pojo;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-/**
- * @author:Aurora
- * @create: 2023-06-21 16:31
- * @Description:
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

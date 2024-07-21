@@ -1,3 +1,8 @@
 spring:
   application:
     name: Boot-02-Jdbc
+  dataSource:
+    url: jdbc:sqlserver://192.168.50.188:1433;databaseName=testdb;integratedSecurity=false;encrypt=true;trustServerCertificate=true;
+    username: aurora
+    password: aurora
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
